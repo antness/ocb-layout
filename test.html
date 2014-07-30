@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/underscore/underscore.js"></script>
+	<script src="js/serverApi.js"></script>
+	<script>
+	</script>
+</head>
+<body>
+	<div>
+		<h3>ServerApi.getUserInfo()</h3>
+		<div>
+			Получение информации о текущем авторизованном пользователе (name, balance). Если не авторизован - вернёт false.
+		</div>
+	</div>
+	<div>
+		<h3>ServerApi.login({login: 'user', password: '123123'})</h3>
+		<div>
+			Авторизация пользователя. В случае успеха - вернёт информацию об авторизованно пользователе, иначе - reject с сообщением об ошибке.
+		</div>
+	</div>
+	<div>
+		<h3>ServerApi.logout()</h3>
+		<div>
+			Логаут
+		</div>
+	</div>
+	<div>
+		<h3>ServerApi.listSections()</h3>
+		<div>
+			Список секций (верхнее меню)
+		</div>
+	</div>
+	<div>
+		<h3>ServerApi.listFilters(sectionId)</h3>
+		<div>
+			Список фильтров в секции (среднее меню)
+		</div>
+	</div>
+	<div>
+		<h3>ServerApi.listGames(sectionId, filterId)</h3>
+		<div>
+			Список игр в секции&фильтре
+		</div>
+	</div>
+	<div>
+		Все вызовы возвращают jQuery Promise: <br/>
+		<code>
+			ServerApi.listSections().then(console.log, console.error)
+		</code>
+	</div>
+</body>
+</html>
